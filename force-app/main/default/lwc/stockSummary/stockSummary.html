@@ -1,11 +1,21 @@
 <template>
-    <if:true></if:true>
-    <lightning-card title="Stock">
-        Ticker Symbol: {ticker_Symbol}
-        Employees: {fullTime_Employees}
-        Profit Margin: {profit_Margins}
-        <p class="slds-p-horizontal_small"> Latest Q Results: {recent_Quarter}  </p>
-        Latest Y Revenue: {yearly_Revenue}
-        Latest Y Earnings: {yearly_Earnings}
+     <lightning-card title="Stock Summary">
+        <div class="slds-m-around_large">
+            <template if:true={tick_symbol}>
+                Ticker : {ticker_Symbol}
+                <div class="slds-m-around_medium">
+                    <p>Employees :{fullTime_Employees}</p>
+                    
+                    <p>Profit Margins :{profit_Margins}</p>
+                    
+                    <p>Annual Revenue :{yearly_Revenue}</p>
+                    
+                    <p>Annual Earnings :{yearly_Earnings}</p>
+                    
+                    <p>Latest Quarter Results:</p>
+                    {recent_Quarter}
+                </div>
+            </template>
+        </div>
     </lightning-card>
 </template>
