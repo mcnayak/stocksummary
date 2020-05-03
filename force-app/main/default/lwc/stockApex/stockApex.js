@@ -18,7 +18,6 @@ export default class stockApex extends LightningElement {
                  stockData;
 
                  @api recordId;
-                 //recordId = '001W000000siGI5IAM';
 
                  @wire(getRecord, {
                    recordId: "$recordId",
@@ -64,21 +63,9 @@ export default class stockApex extends LightningElement {
                     } else if (error) {
                         this.error = error;
                         this.stockData = undefined;
-//                        console.log(this.stockData);
                     }
                 }
                 
             }
-
-             /*
-                 wiredContacts({ error, data }) {
-                    if (data) {
-                        this.stockInfo = data;
-                        this.error = undefined;
-                    } else if (error) {
-                        this.error = error;
-                        this.st = undefined;
-                    }
-                }  */
 
 
