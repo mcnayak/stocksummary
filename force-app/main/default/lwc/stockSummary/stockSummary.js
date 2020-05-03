@@ -64,7 +64,7 @@ export default class StockSummary extends LightningElement {
         ).then(function(response){
             return response.json();
         }).then((myJson) => {
-             console.log((myJson));
+             //console.log((myJson));
              this.profit_Margins = JSON.stringify(myJson.financialData.profitMargins.fmt);
              this.fullTime_Employees = JSON.stringify(myJson.summaryProfile.fullTimeEmployees);
              let years = myJson.earnings.financialsChart.yearly.length;
@@ -72,12 +72,14 @@ export default class StockSummary extends LightningElement {
              this.recent_Quarter = JSON.stringify(myJson.earnings.financialsChart.quarterly[3].date)+ '  ' + JSON.stringify(myJson.earnings.financialsChart.quarterly[3].revenue.fmt);
              this.yearly_Revenue = myJson.earnings.financialsChart.yearly[years-1].revenue.fmt;
              this.yearly_Earnings = myJson.earnings.financialsChart.yearly[years-1].earnings.fmt;
+             /* 
              console.log(myJson.earnings.financialsChart.yearly.length);
              console.log(' Profit Margins%% '+JSON.stringify(myJson.financialData.profitMargins.fmt));
              console.log('%% Employees %% '+JSON.stringify(myJson.summaryProfile.fullTimeEmployees));
              console.log('%% Recent Quarter Revenue %% '+JSON.stringify(myJson.earnings.financialsChart.quarterly[3].date)+ '  $' + JSON.stringify(myJson.earnings.financialsChart.quarterly[3].revenue.fmt));
              console.log('%% Annual Revenue %% '+ (myJson.earnings.financialsChart.yearly[years-1].revenue.fmt));
              console.log('%% Annual Earnings %% '+ (myJson.earnings.financialsChart.yearly[years-1].earnings.fmt));
+             */
 
         }
 

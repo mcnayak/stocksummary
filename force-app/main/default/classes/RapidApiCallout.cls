@@ -15,7 +15,7 @@ public with sharing class RapidApiCallout {
         req.setHeader('x-rapidapi-host','apidojo-yahoo-finance-v1.p.rapidapi.com');
         res = http.send(req);
         system.debug(res.getBody());
-        return res;
+        return 'a';
 
     }
 }
