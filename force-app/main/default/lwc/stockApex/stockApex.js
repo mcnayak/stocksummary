@@ -16,9 +16,10 @@ export default class stockApex extends LightningElement {
                  @track     yearly_Revenue;
                  @track     yearly_Earnings;
                  stockData;
-
+                 //Lightning Data Service Access to Account Record API
                  @api recordId;
-
+                 
+                 // Extract the Ticker Field from the Record on Current Account  Record Page
                  @wire(getRecord, {
                    recordId: "$recordId",
                    fields: TICKER_FIELD
@@ -39,6 +40,7 @@ export default class stockApex extends LightningElement {
                    }
                  }
                  
+                // Call  Apex Method RapidApiCallout.ApiRequest with Ticker Symbol as param
                 @wire(ApiRequest, { ticker: '$param' })
                 stockInfo({error, data}) {
                     if (data) {

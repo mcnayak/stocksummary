@@ -7,8 +7,10 @@ public with sharing class RapidApiCallout {
         HttpResponse httpResponse = new HttpResponse();
         HttpRequest.setMethod('GET');
         HttpRequest.setHeader('Content-Type','application/json');
+        // API Key stored as Named Credential Password
         HttpRequest.setHeader('x-rapidapi-key','{!$Credential.Password}');
         HttpRequest.setHeader('x-rapidapi-host','apidojo-yahoo-finance-v1.p.rapidapi.com');
+        // Makes a callout to the Yahoo Finance Stock API
         HttpRequest.setEndpoint('callout:Yahoo_Finance/stock/v2/get-summary?symbol=' + ticker);
         //req.setEndpoint('callout:Yahoo_Finance/stock/v2/get-summary?symbol=CRM');
 
