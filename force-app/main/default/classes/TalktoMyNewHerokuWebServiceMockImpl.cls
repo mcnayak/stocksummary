@@ -1,4 +1,4 @@
-public class TalktoMyNewHerokuWebServiceMockImpl {
+public class TalktoMyNewHerokuWebServiceMockImpl implements HttpCalloutMock{
 
      Public  HTTPResponse respond(HTTPRequest req){
 //		System.assertEquals('callout:Yahoo_Finance/stock/v2/get-summary?symbol=CRM', req.getEndpoint());
